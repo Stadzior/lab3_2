@@ -12,7 +12,7 @@ public class NewsLoader {
 		
 	}
 
-	private PublishableNews prepareForPublish(IncomingNews news) {
+	public PublishableNews prepareForPublish(IncomingNews news) {
 		PublishableNews publishable = PublishableNews.create();
 		for(IncomingInfo info : news.elems()){
 			if(!info.requiresSubsciption()){
