@@ -14,11 +14,11 @@ public class NewsLoader {
 
 	private PublishableNews prepareForPublish(IncomingNews news) {
 		PublishableNews publishable = PublishableNews.create();
-		for(IncomingInfo snew : news.elems()){
-			if(!snew.requiresSubsciption()){
-				publishable.addPublicInfo(snew.getContent());
+		for(IncomingInfo info : news.elems()){
+			if(!info.requiresSubsciption()){
+				publishable.addPublicInfo(info.getContent());
 			}else{
-				publishable.addForSubscription(snew.getContent(), snew.getSubscriptionType());
+				publishable.addForSubscription(info.getContent(), info.getSubscriptionType());
 			}
 		}
 		
